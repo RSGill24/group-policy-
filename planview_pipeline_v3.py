@@ -35,9 +35,9 @@ from pathlib import Path
 # CONFIG — UPDATE THESE BEFORE RUNNING
 # ============================================================
 
-INPUT_FILE    = r"E:\Input\Planview_Prototype_Hybrid_Demo.xlsx"
+INPUT_FILE    = r"C:\Input\Planview_Prototype_Hybrid_Demo.xlsx"
 INPUT_SHEET   = "Input_Data"
-SQL_SERVER    = "DESKTOP-GLHDKO3"
+SQL_SERVER    = "FDX-2MQ51504KD"
 SQL_DATABASE  = "PlanviewDemo"
 STAGING_TABLE = "PV_Pipeline_Staging"
 
