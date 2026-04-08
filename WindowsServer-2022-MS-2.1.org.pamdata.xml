@@ -1,0 +1,153 @@
+<OrganizationalSettings fullversion="2.1">
+
+  <!-- ============================================================
+       SERVICES
+       ============================================================ -->
+
+  <!-- V-254248: Windows Defender must be running -->
+  <OrganizationalSetting id="V-254248" ServiceName="WinDefend" StartupType="Automatic" />
+
+  <!-- V-254265: Windows Firewall must be running -->
+  <OrganizationalSetting id="V-254265" ServiceName="MpsSvc" StartupType="Automatic" />
+
+  <!-- ============================================================
+       REGISTRY / SECURITY OPTIONS
+       ============================================================ -->
+
+  <!-- V-254343.b: LAN Manager authentication level
+       5 = Send NTLMv2 only, refuse LM & NTLM (STIG required value) -->
+  <OrganizationalSetting id="V-254343.b" ValueData="5" />
+
+  <!-- V-254344: Do not store LAN Manager hash = 1 (enabled) -->
+  <OrganizationalSetting id="V-254344" ValueData="1" />
+
+  <!-- V-254357: Clear virtual memory pagefile at shutdown = 1 (enabled) -->
+  <OrganizationalSetting id="V-254357" ValueData="1" />
+
+  <!-- V-254358: Application event log size >= 32768 KB -->
+  <OrganizationalSetting id="V-254358" ValueData="32768" />
+
+  <!-- V-254359: Security event log size >= 196608 KB -->
+  <OrganizationalSetting id="V-254359" ValueData="196608" />
+
+  <!-- V-254360: System event log size >= 32768 KB -->
+  <OrganizationalSetting id="V-254360" ValueData="32768" />
+
+  <!-- V-254432: UAC prompt behavior for admins = 4 (Prompt for credentials on secure desktop) -->
+  <OrganizationalSetting id="V-254432" ValueData="4" />
+
+  <!-- V-254454: Machine inactivity limit = 900 seconds (15 min) -->
+  <OrganizationalSetting id="V-254454" ValueData="900" />
+
+  <!-- V-254456: Screen saver timeout = 900 seconds -->
+  <OrganizationalSetting id="V-254456" ValueData="900" />
+
+  <!-- V-254459: Screen saver must be enabled = 1 -->
+  <OrganizationalSetting id="V-254459" ValueData="1" />
+
+  <!-- V-254484: Password protected screen saver = 1 -->
+  <OrganizationalSetting id="V-254484" ValueData="1" />
+
+  <!-- ============================================================
+       LOGIN BANNER
+       ============================================================ -->
+
+  <!-- V-254457: Legal notice text (DoD standard banner) -->
+  <OrganizationalSetting id="V-254457" ValueData="------WARNING-------WARNING-----
+You are accessing a U.S. Government information system, which includes: 1) this
+computer, 2) this computer network, 3) all Government-furnished computers
+connected to this network, and 4) all Government-furnished devices and storage
+media attached to this network or to a computer on this network. You understand
+and consent to the following: you may access this information system for
+authorized use only: unauthorized use of the system is prohibited and subject
+to criminal and civil penalties: you have no reasonable expectation of privacy
+regarding any communication or data transiting or stored on this information
+system at any time and for any lawful Government purpose, the Government may
+monitor, intercept, audit, and search and seize any communication or data
+transiting or stored on this information system: and any communications or data
+transiting or stored on this information system may be disclosed or used for
+any lawful Government purpose.  This information system may contain Controlled
+Unclassified Information (CUI) that is subject to safeguarding or dissemination
+controls in accordance with law, regulation, or Government-wide policy.
+Accessing and using this system indicates your understanding of this warning." />
+
+  <!-- V-254458: Legal notice caption -->
+  <OrganizationalSetting id="V-254458" ValueData="DoD Notice and Consent Banner" />
+
+  <!-- ============================================================
+       DoD PKI CERTIFICATES
+       Store locations must match what install_dod_certs.ps1 uses.
+       NOTE: These Location attributes tell PowerSTIG which store to
+       check. The actual cert installation is handled by
+       install_dod_certs.ps1 which runs before DSC MOF application.
+       ============================================================ -->
+
+  <!-- V-254442: DoD Root CAs -> Trusted Root Certification Authorities store -->
+  <OrganizationalSetting id="V-254442.a" Location="LocalMachine\Root" />
+  <OrganizationalSetting id="V-254442.b" Location="LocalMachine\Root" />
+  <OrganizationalSetting id="V-254442.c" Location="LocalMachine\Root" />
+  <OrganizationalSetting id="V-254442.d" Location="LocalMachine\Root" />
+
+  <!-- V-254443: DoD Interoperability Root CA cross-cert -> Untrusted/Disallowed store -->
+  <OrganizationalSetting id="V-254443" Location="LocalMachine\Disallowed" />
+
+  <!-- V-254444: US DOD CCEB Interoperability Root CA cross-certs -> Untrusted/Disallowed store -->
+  <OrganizationalSetting id="V-254444" Location="LocalMachine\Disallowed" />
+
+  <!-- ============================================================
+       ACCOUNT LOCKOUT POLICY
+       ============================================================ -->
+
+  <!-- V-254285: Account lockout duration >= 15 minutes -->
+  <OrganizationalSetting id="V-254285" PolicyValue="15" />
+
+  <!-- V-254286: Account lockout threshold <= 3 invalid logon attempts -->
+  <OrganizationalSetting id="V-254286" PolicyValue="3" />
+
+  <!-- V-254287: Reset account lockout counter after >= 15 minutes -->
+  <OrganizationalSetting id="V-254287" PolicyValue="15" />
+
+  <!-- ============================================================
+       PASSWORD POLICY
+       FIX: Corrected V-254290 from 10 -> 1 (min password age must be >= 1)
+       FIX: Corrected V-254291 from 13 -> 15 (STIG minimum is 14; 15 gives buffer)
+       ============================================================ -->
+
+  <!-- V-254288: Password history = 24 passwords remembered -->
+  <OrganizationalSetting id="V-254288" PolicyValue="24" />
+
+  <!-- V-254289: Maximum password age = 60 days (STIG requires <= 60) -->
+  <OrganizationalSetting id="V-254289" PolicyValue="60" />
+
+  <!-- V-254290: Minimum password age = 1 day (STIG requires >= 1) FIX: was 10 -->
+  <OrganizationalSetting id="V-254290" PolicyValue="1" />
+
+  <!-- V-254291: Minimum password length = 15 characters (STIG minimum is 14) FIX: was 13 -->
+  <OrganizationalSetting id="V-254291" PolicyValue="15" />
+
+  <!-- ============================================================
+       PRIVILEGED GROUP MEMBERSHIP
+       FIX: V-254435 and V-254499 Identity must be "Guests" not "Administrators"
+       These rules deny log on rights TO the Guests group.
+       ============================================================ -->
+
+  <!-- V-254435: Deny log on as a batch job — must apply to Guests group FIX: was Administrators -->
+  <OrganizationalSetting id="V-254435" Identity="Guests" />
+
+  <!-- V-254439: Deny log on as a service — Guests -->
+  <OrganizationalSetting id="V-254439" Identity="Guests" />
+
+  <!-- V-254499: Deny log on locally — must apply to Guests group FIX: was Administrators -->
+  <OrganizationalSetting id="V-254499" Identity="Guests" />
+
+  <!-- ============================================================
+       BUILT-IN ACCOUNT RENAME
+       ============================================================ -->
+
+  <!-- V-254447: Built-in Administrator account must be renamed -->
+  <OrganizationalSetting id="V-254447" OptionValue="AdminRenamed" />
+
+  <!-- V-254448: Built-in Guest account must be renamed -->
+  <OrganizationalSetting id="V-254448" OptionValue="GuestDisabled" />
+
+</OrganizationalSettings>
