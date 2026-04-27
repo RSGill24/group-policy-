@@ -1,0 +1,28 @@
+Step 1 — Download Python
+Go to: python.org/downloads
+Download 3.13
+
+Step 2 — Verify Python installed correctly
+python --version
+pip --version
+
+Step 3 — Install the libraries needed for the script
+pip install pandas pyodbc openpyxl
+
+Step 3 — Install ODBC Driver for SQL Server (if not already installed)
+https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170
+https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver17
+
+Step 4 — Create the database in SSMS
+Open SSMS, right-click Databases → New Database → name it PlanviewDemo
+
+Step 5 — Update the CONFIG section in the script
+Open planview_pipeline.py in Notepad and update just these three lines:
+INPUT_FILE   = r"C:\Your\Folder\Planview_Prototype_Hybrid_Demo.xlsx"
+SQL_SERVER   = "Servername"   # your server name from SSMS
+SQL_DATABASE = "PlanviewDemo"            # database you created in Step 4
+
+
+
+
+
