@@ -1,3 +1,6 @@
+## Repository Structure
+
+```text
 repository-root/
 ├── packer/
 │   ├── docker_server_scripts/
@@ -45,3 +48,4 @@ repository-root/
 ├── sql.tf
 ├── transfer_appliance_sa_roles.tf
 └── variables.tf
+```
