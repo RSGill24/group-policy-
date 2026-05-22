@@ -1,0 +1,1 @@
+python -c "import openpyxl; print(openpyxl.__version__); from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE; print(ILLEGAL_CHARACTERS_RE.pattern)"
