@@ -1,0 +1,51 @@
+[5c/5] Writing output Excel...
+Traceback (most recent call last):
+  File "C:\Views\Planview2026PlatinumConsolidatedViewCrossDB.py", line 803, in <module>
+    main()
+    ~~~~^^
+  File "C:\Views\Planview2026PlatinumConsolidatedViewCrossDB.py", line 773, in main
+    out_path = build_excel(
+        df_inits, df_epics, df_sba_raw, df_tasks,
+        df_in_raw, df_ep_raw, df_tk_raw,
+        ts, Path(f"view_{ts}"), OUTPUT_FOLDER, changes_in, changes_ep)
+  File "C:\Views\Planview2026PlatinumConsolidatedViewCrossDB.py", line 614, in build_excel
+    write_sheet(writer, df_inits, "Initiatives",
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                df_in_raw, init_mapped, init_join_key)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Views\Planview2026PlatinumConsolidatedViewCrossDB.py", line 589, in write_sheet
+    df_out.to_excel(writer, sheet_name=sheet_name, index=False)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\generic.py", line 2312, in to_excel
+    formatter.write(
+    ~~~~~~~~~~~~~~~^
+        excel_writer,
+        ^^^^^^^^^^^^^
+    ...<6 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\formats\excel.py", line 1012, in write
+    writer._write_cells(
+    ~~~~~~~~~~~~~~~~~~~^
+        formatted_cells,
+        ^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        autofilter_range=autofilter_range,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 494, in _write_cells
+    xcell.value, fmt = self._value_with_fmt(cell.val)
+    ^^^^^^^^^^^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\openpyxl\cell\cell.py", line 218, in value
+    self._bind_value(value)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\openpyxl\cell\cell.py", line 197, in _bind_value
+    value = self.check_string(value)
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\openpyxl\cell\cell.py", line 165, in check_string
+    raise IllegalCharacterError(f"{value} cannot be used in worksheets.")
+openpyxl.utils.exceptions.IllegalCharacterError: Current State: * While we guide and contain customer contacts in each individual customer care channel, we observe channel hopping of customers♂This results in: * poor customer experiences and  * duplicate and avoidable human assisted contacts & CE cost * At the same time, we have triple total cost of ownership for maintaining digital capabilities within each customer contact channel for containment and automation (VA, VVA, IVA) * Despite high cost, containment (guidance & automation) and digital issue resolution remain below expectations  Opportunity: * Reduce Customer Effort * Improve Issue Resolution * Improve Customer Satisfaction  * Reduce human assisted contact volumes per pack * Increase digital issue resolution and satisfaction  * Increase digital containment rate (guided and automated) * Reduce cost to serve  Desired State: * FedEx customers have one Digital 1st Customer Care Entry Point on FedEx.com that deals with guidance, automation  & channel guidance consistently based on customer identity, service, and intent/service journey * The experience is visual and easy to use for customers and provides visibility on in flight inquiries/issues  * The Digital 1st Customer Care entry point is easy to maintain from a business side & cost efficient since it is one place and instance instead of multiple digital estates to be maintained * Customers can’t hop since the channel guidance entry point sits in front of all customer care contact channels * No general frontline agent required to triage the customer inquiry as the “digital twin”  resolves/automates easy inquiries and triages inquiries so that specialized support teams can directly respond * Customer effort and customer care costs reduce * No wait in queue since voice is mainly handled via call back * Agents have full visibility into all interactions and cases through one single desktop system * Customer experience is measured for the service journey and not for the individual touch points * Other customer support channels eg voice is configured accordingly to create a consistent and connected support experience for the customers * Significantly reduced cost for VA, VVA and IVA  The Recipient & SAM customer segment are covered via the Digital Twin (ASK FedEx) combined with a modernized Fedex.com Support page experience inspired by Control Center and Support Manager.          The 'The Pogram' customer segment is covered via an FedEx Support Hub Experience at feature parity. cannot be used in worksheets.
+
+C:\Views>
