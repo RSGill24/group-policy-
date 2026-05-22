@@ -1,0 +1,52 @@
+
+[5c/5] Writing output Excel...
+Traceback (most recent call last):
+  File "C:\Views\Planview2026PlatinumConsolidatedViewCrossDB.py", line 774, in <module>
+    main()
+    ~~~~^^
+  File "C:\Views\Planview2026PlatinumConsolidatedViewCrossDB.py", line 744, in main
+    out_path = build_excel(
+        df_inits, df_epics, df_sba_raw, df_tasks,
+        df_in_raw, df_ep_raw, df_tk_raw,
+        ts, Path(f"view_{ts}"), OUTPUT_FOLDER, changes_in, changes_ep)
+  File "C:\Views\Planview2026PlatinumConsolidatedViewCrossDB.py", line 585, in build_excel
+    write_sheet(writer, df_inits, "Initiatives",
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                df_in_raw, init_mapped, init_join_key)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Views\Planview2026PlatinumConsolidatedViewCrossDB.py", line 560, in write_sheet
+    df_out.to_excel(writer, sheet_name=sheet_name, index=False)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\core\generic.py", line 2312, in to_excel
+    formatter.write(
+    ~~~~~~~~~~~~~~~^
+        excel_writer,
+        ^^^^^^^^^^^^^
+    ...<6 lines>...
+        engine_kwargs=engine_kwargs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\formats\excel.py", line 1012, in write
+    writer._write_cells(
+    ~~~~~~~~~~~~~~~~~~~^
+        formatted_cells,
+        ^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        autofilter_range=autofilter_range,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 494, in _write_cells
+    xcell.value, fmt = self._value_with_fmt(cell.val)
+    ^^^^^^^^^^^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\openpyxl\cell\cell.py", line 218, in value
+    self._bind_value(value)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\openpyxl\cell\cell.py", line 197, in _bind_value
+    value = self.check_string(value)
+  File "C:\Users\pam_viewpnpmadm2\AppData\Local\Programs\Python\Python313\Lib\site-packages\openpyxl\cell\cell.py", line 165, in check_string
+    raise IllegalCharacterError(f"{value} cannot be used in worksheets.")
+openpyxl.utils.exceptions.IllegalCharacterError: The request is caused by the retirement of the CIT WebWorld application end of CY 2025, caused by the EOL (end of lifecycle) of the used HP server operating system. By end of CY 2025 the most modules of the CIT WebWorld application have been retired, but the functionality is still required until the customer migration has not been fulfilled.  1. Connote Print and Identification: A large number of TNT EDI customers in DE/CH/AT/Nordics/ES do not provide consignment note documents which are necessary for the batch image scanning process in the location. The locations image all ROW-/and DG-shipments into the Genisis scanning application to make the documents for the supply chain accessible. The Genisis application uses the consignment note as a sheet divider and interpret the barcode with the consignment number to assigns the connote to the corresponding scanned documents.♂The locations use the TNT application ‘CIT WebWorld – EDI Checker’ to print out those missing consignment notes (ROW approx. 3200/day; HZ approx. 300/day). In this application, the location can select by 3 letter location code, time frame and kind of shipment (ROW-rest of world / HZ-hazardous goods / Pickup), in the result the location can again select, which consignments needs to be printed.       In addition, the consignment note print functionality is also used for the pickup process (approx. 150/day) to provide the necessary order paperwork to the driver. Customer Data Uplift Check: The CIT WebWorld is also used by the location to check whether a customer has sent their EDI shipping orders.   The CIT applications include a lot of functionalities/modules which are planned to be disabled. The formally EOL date of the Server OS end of CY 2025 implies the latest due date.♂A complete customer migration of all TNT EDI customers to FedEx would make the request obsolete.♂A purely upgrade of the existing server and OS would cause an upgrade of the used software development platform, combined with the missing knowledge/skills to modernize the developed applications. ♂Goal/Requirements: We need a selection mask (Location 3-letter code / Date from – until/ click box for ROW / DG / Pickup) to fetch data from CIT database, the search result should contain (customer no. / customer name / count of consignments of a batch / a click box to mark multiple result item for print / a click box for ‘Print all’). In case a customer batch contains multiple consignments, a second view is necessary to mark records on consignment level. At the end the selected items has to be printed in the TNT Consignment note layout on the selected printer. The prerequisite is, that the CIT database keeps fed with TNT EDI data  ******Alignment to Enterprise and/or Portfolio Strategy – YES (Condor / application consolidation initiative / retirement of TNT legacy systems / modernization of IT infrastructure).   ******Expected Outcomes & Key Results****** – The expected outcome is to get the same functionality as EDI Checker. With a high focus on the selection of customer shipments based on the same selection criteria in the same (or better) time. After the identification part, the new system should be able to perform connote prints identical to EDI Checker (single print, batch print).  ******Value Drivers – Factors/drivers connecting demand’s key results to Strategy and Strategic KPIs as applicable Optional at demand funneling  This is a cost avoidance: The value of this initiative is to replace the TNT application ‘CIT WebWorld – EDI Checker’ to print out those missing consignment notes (ROW approx. 3200/day; HZ approx. 300/day). In this application, the location can select by 3 letter location code, time frame and kind of shipment (ROW-rest of world / HZ-hazardous goods / Pickup), to give  the abilty for customer (as today) to hand over shipments without consignment notes (mostly major customer in Germany). Therefore more staff would be needed to compensate the workaround.  *****Type of Return – Requirement to enable current processes and customer setups. Without this software several customers would need a big setup change, which could lead to losing the customer. cannot be used in worksheets.
+
+C:\Views>
