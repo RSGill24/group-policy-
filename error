@@ -1,0 +1,31 @@
+Showing logs for last 1 hour from 6/9/26, 2:50 PM to 6/9/26, 3:50 PM.
+2026-06-09 15:17:55.684
+
+Compute Engine
+
+insert
+
+…ker-6a2866d8-87d1-53ea-0e1b-0c0128cd220f
+
+images-build-sa1@ggn-nmfs…
+SERVICE_ACCOUNT_ACCESS_DENIED
+
+{
+insertId: "uufazydqc9g"
+labels: {1}
+logName: "projects/ggn-nmfs-winde-dev-1/logs/cloudaudit.googleapis.com%2Factivity"
+operation: {3}
+protoPayload: {
+@type: "type.googleapis.com/google.cloud.audit.AuditLog"
+authenticationInfo: {4}
+methodName: "v1.compute.instances.insert"
+request: {1}
+requestMetadata: {4}
+resourceName: "projects/ggn-nmfs-winde-dev-1/zones/us-east4-b/instances/packer-6a2866d8-87d1-53ea-0e1b-0c0128cd220f"
+serviceName: "compute.googleapis.com"
+status: {2}
+}
+receiveTimestamp: "2026-06-09T19:17:56.449381206Z"
+resource: {2}
+severity: "ERROR"
+timestamp: "2026-06-09T19:17:55.684001Z"
